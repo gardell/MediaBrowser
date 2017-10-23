@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="program"
+            type="org.gardell.mediabrowser.model.Program" />
+
+        <variable
+            name="on_click"
+            type="org.gardell.mediabrowser.ClickListener&lt;org.gardell.mediabrowser.model.Program&gt;" />
+        <variable
+            name="image_url_listener"
+            type="com.bumptech.glide.request.RequestListener&lt;android.graphics.drawable.Drawable&gt;"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            app:image_url="@{program.imageUrl}"
+            android:transitionName="@{Integer.toString(program.id)}"
+            app:image_url_listener="@{image_url_listener}"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{program.name}"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{program.description}"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Media Browser</string>
+    <string name="title_activity_details">DetailsActivity</string>
+</resources>
